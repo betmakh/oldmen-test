@@ -2,6 +2,7 @@
 <html lang="en" ng-app="oldmenTest">
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 <script src="js/vendor.js"></script>
@@ -9,9 +10,29 @@
 <script src="js/controllers/controllers.js"></script>
 <script src="js/controllers/home.js"></script>
 
-<div ng-controller="HomeCtrl">
+<div ng-controller="HomeCtrl as ctrl">
+	<div ng-repeat="region in regions">
+		<div ng-click="ctrl.refreshCountries(region)" >{{region}}</div>
+	</div>
     {{ welcome }}
 </div>
+
+<main class="container">
+<div class="selector" ng-controller="HomeCtrl as ctrl"> 
+	<select ng-model="currentRegion" ng-options="reg for region in regions">
+      <option value="">Region</option>
+    </select>
+	<select name="region" ng-model="" id="">
+		<option ng-repeat="region in regions" value="{{region}}">{{region}}</option>
+	</select>
+	<select name="region" id="">
+		<option value="some">some</option>
+	</select>
+	<div class="select">
+		
+	</div>
+	</div>
+</main>
 
 </body>
 </html>

@@ -19,6 +19,11 @@ module.exports = (grunt) ->
       rebuild:
         src: 'dist'
 
+    sass:
+      dist:
+        files: 
+            'app/styles/main.scss': 'dist/styles/main.css'
+
     copy:
       dist:
         files: [
@@ -36,3 +41,5 @@ module.exports = (grunt) ->
         ]
 
   grunt.registerTask 'default', ['clean:rebuild', 'bower_concat:dist', 'copy:dist']
+  grunt.registerTask 'styles', ['sass']
+

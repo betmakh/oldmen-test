@@ -1,0 +1,26 @@
+@import 'reset.css';
+body {
+	height: 100vh;
+	width: 100vw;
+	background: linear-gradient(135deg, rgb(155, 89, 182) 0%, rgb(41, 137, 216) 50%, rgb(26, 188, 156) 100%);;
+}
+.container {
+	width: 100%;
+	.selector {
+		width: 400px;
+		margin: auto;
+		select {
+			border: 2px solid white;
+			border-radius: 15px;
+			background: transparent;
+			display: block;
+			color: white;
+			height: 40px;
+			width: 100%;
+			& + select {
+				margin-top: 20px;
+			}
+		}
+
+	}
+}
