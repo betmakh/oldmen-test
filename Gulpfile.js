@@ -50,10 +50,10 @@ gulp.task('styles', function() {
 
 gulp.task('scripts', function() {
   return gulp.src(srcFolder + 'js/**/*')
-    .pipe(plumber())
     // .pipe(concat('scripts.js'))
     .pipe(uglify())
     .pipe(gulp.dest(dstFolder + '/js'))
+    .pipe(plumber())
     .pipe(connect.reload());
 });
 
@@ -69,7 +69,7 @@ gulp.task('scripts', function() {
 
 var paths = {
   htmls:          srcFolder +'/*.html',
-  scripts:         srcFolder + 'js/**/*',
+  // scripts:         srcFolder + 'js/**/*',
   // 'base-styles':  'scss/base/*.scss',
   // scripts: 'js/*js',
   styles:  srcFolder + '/styles/*.scss'
@@ -95,6 +95,6 @@ gulp.task('default',  [
   'connect',
   'htmls',
   'styles',
-  'watch',
+  // 'watch',
   'scripts'
   ]);
