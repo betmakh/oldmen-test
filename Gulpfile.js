@@ -10,7 +10,8 @@ var gulp          = require('gulp'),
     srcFolder = 'app',
     dstFolder = 'dist',
     normalize = require('normalize'),
-    prettifyHtml = require('gulp-html-prettify');
+    prettifyHtml = require('gulp-html-prettify')
+    base64 = require('gulp-css-base64');
 
 
 // HTML
@@ -30,6 +31,7 @@ gulp.task('styles', function() {
     .pipe(sass())
     .pipe(prefix())
     .pipe(minifyCSS({keepBreaks: true}))
+    // .pipe(base64())
     .pipe(gulp.dest(dstFolder + '/styles'))
     .pipe(connect.reload());
 });
@@ -95,6 +97,6 @@ gulp.task('default',  [
   'connect',
   'htmls',
   'styles',
-  // 'watch',
+  'watch',
   'scripts'
   ]);

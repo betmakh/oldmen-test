@@ -18,7 +18,8 @@
     {{ welcome }}
 </div>
  -->
- <div class="modal {{modalClass}}" ng-init="modalClass = 'hidden'">
+ <div class="modal-wrapper {{modalClass}}" ng-init="modalClass = 'hidden'" ng-click="modalClass = 'hidden'"></div>
+ <div class="modal">
  <button class="exit" ng-click="modalClass = 'hidden'">X</button>
  <ul>
  	<li ng-repeat="contact in contacts">
